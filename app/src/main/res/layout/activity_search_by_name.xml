@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".SearchByNameActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/searchView"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:hint="Search by name"
+                android:textColor="@android:color/white"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/search_icon"
+                android:drawableStart="@drawable/search_icon"
+                android:drawablePadding="12dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchByLetter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            android:layout_below="@id/search"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/searchView1"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:hint="Search by first letter"
+                android:textColor="@android:color/white"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/search_icon"
+                android:drawableStart="@drawable/search_icon"
+                android:drawablePadding="12dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_below="@id/searchByLetter"
+            android:layout_marginTop="20dp"
+            tools:listitem="@layout/latest_list" />
+
+            <TextView
+                android:id="@+id/textView_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/search_list"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:text="Search by letter"
+                android:textColor="@android:color/white"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_by_letter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_below="@id/textView_search"
+            android:layout_marginTop="20dp"
+            tools:listitem="@layout/latest_list" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
