@@ -1,12 +1,15 @@
 package com.example.mealdb.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mealdb.R
 import com.example.mealdb.model.Meal
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.filter_categorylist.*
 import kotlinx.android.synthetic.main.filter_categorylist.view.*
 
 class FilterCategoryAdapter(
@@ -37,6 +40,11 @@ class FilterCategoryAdapter(
 
                 setOnClickListener{
                     onMealClick(category)
+                }
+
+                love.setOnClickListener{
+                    love.setColorFilter(Color.RED);
+                    Toast.makeText(context, "Added to favourites", Toast.LENGTH_SHORT);
                 }
             }
         }
